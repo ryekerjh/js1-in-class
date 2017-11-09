@@ -59,3 +59,48 @@ let object = {
 // console.log(confirm);
 var userAnswer = prompt("What is your name?", "Johnny (first name only!!)");
 console.log(userAnswer);
+// var firstName = prompt();
+// var lastName = prompt();
+var birthday = prompt("whats your birthday?", '1/1/1000');
+ birthday = new Date(birthday);
+ var now = new Date();
+ //ZE ANSWER!!!
+ {
+   var yearDiff = Math.abs((birthday-now)/31536000000);
+ }
+ console.log(yearDiff);
+var dateWasCorrect = confirm(`is ${birthday} your birthday`);
+ if(dateWasCorrect) {
+   alert(birthday);
+ } else {
+   var birthday = prompt();
+ }
+ 
+ //Takehome
+ 
+ var userName = prompt('what is your name?', 'Joe');
+ var favColor = prompt('What is your favorite color?', 'acceptable: blue, green, ...');
+ favColor = favColor.toLowerCase();
+ switch(favColor) {
+   case 'blue':
+    alert('Blue is do gewd.');
+    break;
+    case: 'green'
+    
+    default:
+      alert('No, try again!!');
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
