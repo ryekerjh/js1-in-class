@@ -31,13 +31,32 @@ var arr = ['js1', 'Websites for beginners', 'Mobile friendly websites', 'angular
 //   n++;
 // }
 
-
-for(let i = 0; i <= holder.length; i++) {
-  console.log(holder[i]);
-  
+var todos = [];
+for(let i = 0; i <= 3; i++) {
+  let todo = [];
+  var userTodo = prompt('What is something you want to get done?', 'Netflix');
+  var dueDate = prompt('How long should this take you?', '1');
+  dueDate = parseInt(dueDate);
+  if(dueDate == NaN) {
+    alert('OH noooooooo....');
+  } else {
+  todo.push(userTodo, dueDate);
+  todos.push(todo);  
 }
-
-
+  if(todos.length == 3) {
+    break;
+  } else {
+    continue;
+  }
+}
+let v = 0;
+while(v <= 2) {
+  if(todos[v][1] < todos[v - 1][1]) {
+    
+  }
+v++
+}
+//[["thing1", 1], ["thing2", 1]];
 
 
 
