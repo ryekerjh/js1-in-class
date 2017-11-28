@@ -1,27 +1,24 @@
-var div = document.querySelector('.text');
-// div.textContent = '<p>hello world!</p>';
-// div.innerHTML = '<h1 class="text-center">Whoa, JS IS SO KEWL!!</h1>';
-var myNewPTag = document.createElement('p');
-// var myDiv = document.createElement('div');
-// myDiv.textContent = 'Star Wars is gonna suck...:()';
-myNewPTag.textContent = 'stuff';
-var myLi = document.getElementsByClassName('myLi');
-// div.appendChild(myNewPTag);
-// console.log(myNewPTag);
-// div.append(myDiv, myNewPTag);
-var ul = document.querySelector('ul');
-var lis = document.querySelectorAll('li');
-ul.insertBefore(myNewPTag, lis[2]);
+//Get the body tag and create the various tags
+const body = document.querySelector('body');
+const nav = document.createElement('ul');
+const h1 = document.createElement('h1');
+const p = document.createElement('p');
+const footer = document.createElement('footer');
+const tagContents = ['Hpme', 'About', 'Contact'];
+//Add BS classes to nav for styling
+nav.classList.add('nav', 'nav-pills');
 
-myNewPTag.className = 'text-center text-danger';
+for(let i = 0; i < 4; i++) {
+  let li = document.createElement('li');
+  li.classList.add('text-default');
+  if(i != 0) {
+    li.classList.add('pull-right');
+  }
+  li.textContent = tagContents[i];
+  nav.appendChild(li);
+}
 
-myNewPTag.addEventListener('click', function(e) {
-  
-});
-var myImg = document.createElement('img');
-myImg.setAttribute('src', 'https://cdn.trolleytours.com/wp-content/uploads/2016/06/washington-dc-capitol-at-night.jpg');
+h1.textContent = 'Hello World!';
+h1.classList.add('text-center');
 
-div.appendChild(myImg);
-
-// var userInput = 'DjE  EJ J nnd  jd      002';
-// userInput = userInput.split(' ').trim().join(' ');
+body.append(nav, h1);
