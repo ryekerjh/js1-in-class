@@ -4,7 +4,7 @@ const nav = document.createElement('ul');
 const h1 = document.createElement('h1');
 const p = document.createElement('p');
 const footer = document.createElement('footer');
-const tagContents = ['Hpme', 'About', 'Contact'];
+const tagContents = ['Home', 'About', 'Contact'];
 //Add BS classes to nav for styling
 nav.classList.add('nav', 'nav-pills');
 
@@ -22,3 +22,21 @@ h1.textContent = 'Hello World!';
 h1.classList.add('text-center');
 
 body.append(nav, h1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_.each(e, (ex) => {
+  console.log(ex);
+})
