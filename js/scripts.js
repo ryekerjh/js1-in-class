@@ -22,21 +22,3 @@ h1.textContent = 'Hello World!';
 h1.classList.add('text-center');
 
 body.append(nav, h1);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-_.each(e, (ex) => {
-  console.log(ex);
-})
