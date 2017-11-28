@@ -1,0 +1,15 @@
+.row {
+  margin: 20px auto;
+}
+
+.btn {
+  height: 90px;
+  color; #fff;
+}
+
+#result {
+  height: 50px;
+  background-color: #eee;
+  color: #333;
+  font-size: 2em;
+}
