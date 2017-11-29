@@ -1,5 +1,6 @@
 const btns = document.getElementsByClassName('numbs');
 const operators = document.getElementsByClassName('ops');
+const memBtns = document.getElementsByClassName('mem');
 var result = document.getElementById('result'),
 firstValue = 0,
 secondValue = 0,
@@ -26,12 +27,23 @@ for(let j = 0; j < operators.length; j++) {
   let thisBtn = operators[j];
   thisBtn.addEventListener('click', function(e) {
     allowSecond = true;
-    if(secondValue !== 0) {
+    if(secondValue != 0) {
       performOperation(`${e.target.innerText}`)
     } else {
       operatorType = `${e.target.innerText}`;
     }
   });
+}
+
+for(let i = 0; i < memBtns.length; i++) {
+  let thisBtn = memBtns[i];
+  thisBtn.addEventListener("click", (e) => {
+    if(e.target.innerText == 'm+') {
+      storeValue(firstValue);
+    } else {
+      recallMemory();
+    }
+  }); 
 }
 
 function setFirst(value) {
@@ -103,7 +115,6 @@ function evaluateEquals() {
       break;
   }
   result.innerText = firstValue;
-  // secondValue = 0;
   secondEntered = false;
 }
 
@@ -128,8 +139,23 @@ function divide() {
 };
 
 function clearValues() {
+  console.log('inside clear values')
   firstValue = "0";
   secondValue = "0";
   operatorType = null;
   allowSecond = false;
+  result.innerText = firstValue;
+};
+
+function storeValue(value) {
+  memory = parseInt(value);
+};
+
+function recallMemory() {
+  if(memory != null) {
+    firstValue = memory;
+    result.innerText = firstValue;
+  } else {
+    alert('No Value Saved');
+  }
 };
