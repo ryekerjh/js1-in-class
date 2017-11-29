@@ -29,8 +29,10 @@ for(let j = 0; j < operators.length; j++) {
     allowSecond = true;
     if(secondValue != 0) {
       performOperation(`${e.target.innerText}`)
-    } else {
+    } else if(e.target.innerText != 'sqrt'){
       operatorType = `${e.target.innerText}`;
+    } else {
+      squareRoot();
     }
   });
 }
@@ -85,6 +87,12 @@ function performOperation(operator) {
     case '/':
       divide();
       break;
+    case '^':
+        exponents();
+        break;
+    case 'sqrt':
+        squareRoot();
+        break;
     case 'C':
       clearValues();
       break;
@@ -93,10 +101,10 @@ function performOperation(operator) {
       break;
   }
   result.innerText = firstValue;
+  operatorType = null;
 };
 
 function evaluateEquals() {
-  console.log(operatorType, 'optype', firstValue, '<<<first', secondValue, '<<<second');
   switch(operatorType) {
     case '+':
       firstValue += secondValue;
@@ -110,12 +118,19 @@ function evaluateEquals() {
     case '/':
       divide();
       break;
+    case '^':
+      exponents();
+      break;
+    case 'sqrt':
+      squareRoot();
+      break;
     default:
       firstValue = firstValue;
       break;
   }
   result.innerText = firstValue;
   secondEntered = false;
+  operatorType = null;
 }
 
 function multiply() {
@@ -137,6 +152,22 @@ function divide() {
   }
   operatorType = '/';
 };
+
+function exponents() {
+  if(secondEntered) {
+    firstValue = Math.pow(firstValue, secondValue);
+    secondValue = 0;
+  } else {
+    firstValue = firstValue;
+  }
+  operatorType = '^';
+};
+
+function squareRoot() {
+  console.log(firstValue);
+  firstValue = Math.sqrt(firstValue);
+  result.innerText = firstValue;
+}
 
 function clearValues() {
   console.log('inside clear values')
