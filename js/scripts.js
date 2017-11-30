@@ -134,6 +134,7 @@ function evaluateEquals() {
 }
 
 function multiply() {
+  debugger;
   if(secondEntered) {
     firstValue *= secondValue;
     secondValue = 0;
