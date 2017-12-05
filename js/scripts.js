@@ -86,7 +86,9 @@ let name = "Ryeker";
  
  var snoodyMovie = new Arthouse("The Room", 2002, 0, "Tommy Wiesoau", "10/10", 0);
  
- console.log(snoodyMovie);
+ // console.log(snoodyMovie);
+ 
+ 
  
  
  
